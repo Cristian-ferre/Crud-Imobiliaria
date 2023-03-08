@@ -10,10 +10,10 @@ namespace imobiliaria.Context
 
         }
 
-        // public DbSet<City> Cities { get; set; }
+        public DbSet<City> Cities { get; set; }
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Property> Properties { get; set; }
-        // public DbSet<PropertyType> PropertyTypes { get; set; }
+        public DbSet<PropertyType> PropertyTypes { get; set; }
 
     }
 }

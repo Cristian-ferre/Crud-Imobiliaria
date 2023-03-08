@@ -42,7 +42,7 @@ namespace imobiliaria.Controllers
             await _context.SaveChangesAsync();
             return await GetPropriedades(newProperty.OwnerId);
         }
-        
+
 
         [HttpPut]
         [Route("api/propriedade/{id}")]
@@ -60,7 +60,6 @@ namespace imobiliaria.Controllers
         public async Task<ActionResult<List<Property>>> GetPropriedades(int OwnerId)
         {
             var Properties = await _context.Properties.Where(x => x.OwnerId == OwnerId).ToListAsync();
-
             return Properties;
         }
 
@@ -71,34 +70,15 @@ namespace imobiliaria.Controllers
             return Ok(todos);
         }
 
-
-
-
-
-
-
-
-
-
-        // [HttpDelete("Deletar/Street")]
-        // public async Task<ActionResult> deleteid(int id)
-        // {
-        //     var dele = await _context.Properties.FindAsync(id);
-        //     _context.Properties.Remove(dele);
-        //     _context.SaveChangesAsync();
-        //     return NoContent();
-        // }
-
-
-        // [HttpDelete("{id}")]
-        // public ActionResult deletePro(int id)
-        // {
-        //     var pro = _context.Properties.Find(id);
-        //     _context.Properties.Remove(pro);
-        //     _context.SaveChanges();
-        //     return NoContent();
-        // }
-
+        [HttpDelete]
+        [Route("delete")]
+        public async Task<ActionResult> DeletePropriedade(int propertyId)
+        {
+            var dele = await _context.Properties.FindAsync(propertyId);
+            _context.Remove(dele);
+            _context.SaveChangesAsync();
+            return NoContent();
+        }
 
     }
 }

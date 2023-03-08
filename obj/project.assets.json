@@ -2224,24 +2224,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\96343\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria\\imobiliaria.csproj",
+      "projectUniqueName": "c:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\imobiliaria.csproj",
       "projectName": "imobiliaria",
-      "projectPath": "c:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria\\imobiliaria.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria\\obj\\",
+      "projectPath": "c:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\imobiliaria.csproj",
+      "packagesPath": "C:\\Users\\96343\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\96343\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2298,7 +2300,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

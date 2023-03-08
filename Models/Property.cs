@@ -25,18 +25,18 @@ namespace imobiliaria.Models
         //rua
         public string Street { get; set; }
 
-        // [JsonIgnore]
-        // public PropertyType PropertyType { get; set; }
-        // public int PropertyTypeId { get; set; }
+        [JsonIgnore]
+        public PropertyType PropertyType { get; set; }
+        public int PropertyTypeId { get; set; }
 
+        // [JsonIgnore]
+        public City City { get; set; }
+        public int CityId { get; set; }
 
         //Uma propriedade, poderá pertencer apenas a um proprietario
         [JsonIgnore]
         public Owner Owner { get; set; }
         public int OwnerId { get; set; }
 
-        // [JsonIgnore]
-        // public City City { get; set; }
-        // public int CityId { get; set; }
     }
 }

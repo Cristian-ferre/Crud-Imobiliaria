@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using imobiliaria.Context;
 
@@ -11,9 +12,10 @@ using imobiliaria.Context;
 namespace imobiliaria.Migrations
 {
     [DbContext(typeof(ImobiliariaContext))]
-    partial class ImobiliariaContextModelSnapshot : ModelSnapshot
+    [Migration("20230308130625_CriaçãoDeTabelaPropertyType")]
+    partial class CriaçãoDeTabelaPropertyType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,26 +23,6 @@ namespace imobiliaria.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("imobiliaria.Models.City", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
-
-                    b.Property<string>("CEPCyty")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameCity")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("City");
-                });
 
             modelBuilder.Entity("imobiliaria.Models.Owner", b =>
                 {
@@ -68,12 +50,6 @@ namespace imobiliaria.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("CityId1")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("ImgURL")
                         .HasColumnType("nvarchar(max)");
@@ -107,8 +83,6 @@ namespace imobiliaria.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CityId1");
-
                     b.HasIndex("OwnerId");
 
                     b.HasIndex("PropertyTypeId1");
@@ -134,10 +108,6 @@ namespace imobiliaria.Migrations
 
             modelBuilder.Entity("imobiliaria.Models.Property", b =>
                 {
-                    b.HasOne("imobiliaria.Models.City", "City")
-                        .WithMany("Properties")
-                        .HasForeignKey("CityId1");
-
                     b.HasOne("imobiliaria.Models.Owner", "Owner")
                         .WithMany("Properties")
                         .HasForeignKey("OwnerId")
@@ -148,16 +118,9 @@ namespace imobiliaria.Migrations
                         .WithMany("Properties")
                         .HasForeignKey("PropertyTypeId1");
 
-                    b.Navigation("City");
-
                     b.Navigation("Owner");
 
                     b.Navigation("PropertyType");
-                });
-
-            modelBuilder.Entity("imobiliaria.Models.City", b =>
-                {
-                    b.Navigation("Properties");
                 });
 
             modelBuilder.Entity("imobiliaria.Models.Owner", b =>

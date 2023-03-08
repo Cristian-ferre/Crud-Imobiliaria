@@ -23,6 +23,7 @@ namespace imobiliaria.DTO
         public string Street { get; set; }
 
         // public int PropertyTypeId {get;set;}
+        public int CityId {get;set;}
 
         public int OwnerId { get; set; }
         

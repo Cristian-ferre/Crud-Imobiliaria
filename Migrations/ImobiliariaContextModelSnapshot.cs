@@ -71,9 +71,6 @@ namespace imobiliaria.Migrations
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImgURL")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Neighborhood")
                         .HasColumnType("nvarchar(max)");
 

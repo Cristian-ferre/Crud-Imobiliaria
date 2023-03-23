@@ -11,7 +11,7 @@ using imobiliaria.Context;
 namespace imobiliaria.Migrations
 {
     [DbContext(typeof(ImobiliariaContext))]
-    [Migration("20230323171027_CriacaoDeTabelas")]
+    [Migration("20230323191419_CriacaoDeTabelas")]
     partial class CriacaoDeTabelas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,9 +72,6 @@ namespace imobiliaria.Migrations
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
-
-                    b.Property<string>("ImgURL")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Neighborhood")
                         .HasColumnType("nvarchar(max)");

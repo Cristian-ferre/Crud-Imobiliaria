@@ -55,7 +55,6 @@ namespace imobiliaria.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PropertyValue = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     NumberBedrooms = table.Column<byte>(type: "tinyint", nullable: false),

@@ -5,7 +5,6 @@ namespace imobiliaria.Models
     public class Property
     {
         public int Id { get; set; }
-        public string ImgURL { get; set; }
 
         //descrição curta
         public string ShortDescription { get; set; }

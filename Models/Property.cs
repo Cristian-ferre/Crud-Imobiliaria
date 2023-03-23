@@ -29,7 +29,7 @@ namespace imobiliaria.Models
         public PropertyType PropertyType { get; set; }
         public int PropertyTypeId { get; set; }
 
-        // [JsonIgnore]
+        [JsonIgnore]
         public City City { get; set; }
         public int CityId { get; set; }
 

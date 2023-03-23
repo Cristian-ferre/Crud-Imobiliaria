@@ -1,12 +1,15 @@
+using System.Text.Json.Serialization;
+
+
 namespace imobiliaria.Models
 {
     public class PropertyType
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Type { get; set; }
-
+        [JsonIgnore]
         public List<Property> Properties { get; set; }
-        
+
 
     }
 }

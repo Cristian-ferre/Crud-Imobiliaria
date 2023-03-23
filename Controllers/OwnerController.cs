@@ -1,15 +1,11 @@
-using System.Linq;
 using imobiliaria.Context;
 using imobiliaria.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Swashbuckle.AspNetCore.Annotations;
 
 namespace imobiliaria.Controllers
 {
     [ApiController]
-
-    [Route("api/[Controller]")]
     public class OwnerController : ControllerBase
     {
         public readonly ImobiliariaContext _context;
@@ -21,7 +17,7 @@ namespace imobiliaria.Controllers
 
         //Adicionar Propritario de maneira assincrona
         [HttpPost]
-        [Route("api/proprietarios")]
+        [Route("api/owners")]
         public async Task<ActionResult<Owner>> CreteProprietario(Owner prope)
         {
             _context.Owners.Add(prope);
@@ -29,10 +25,9 @@ namespace imobiliaria.Controllers
             return Ok(prope);
         }
 
-        //Deletar Proprietario
-        // [HttpDelete("Deletar/Proprietario")]
+        
         [HttpDelete]
-        [Route("api/proprietarios/{id}")]
+        [Route("api/owner/{nameOwner}")]
         public async Task<ActionResult> DeleteProprietario(string nameOwner)
         {
             var proprietario = await _context.Owners.FirstOrDefaultAsync(p => p.NameOwner == nameOwner);
@@ -42,13 +37,11 @@ namespace imobiliaria.Controllers
         }
 
         [HttpPut]
-        [Route("api/proprietarios/{id}")]
+        [Route("api/owners/{id}")]
         public IActionResult Edit(int Id, [FromBody] Owner Owner)
         {
-            //!= é diferente / 
             if (Id != Owner.Id)
             {
-                // return BadRequest();
                 return BadRequest(new ProblemDetails
                 {
                     Status = StatusCodes.Status400BadRequest,
@@ -63,7 +56,7 @@ namespace imobiliaria.Controllers
 
         // mostar todso de maneira assincrona
         [HttpGet]
-        [Route("api/proprietarios")]
+        [Route("api/owners")]
         public async Task<ActionResult<List<Owner>>> GetAll()
         {
             var todes = await _context.Owners.ToListAsync();
@@ -72,7 +65,7 @@ namespace imobiliaria.Controllers
 
         //get pro nome
         [HttpGet]
-        [Route("api/proprietarios/nome/{NameOwner}")]
+        [Route("api/Owners/name/{NameOwner}")]
         public async Task<ActionResult> GetProprietario(string NameOwner)
         {
             var Proprietario = await _context.Owners.FirstOrDefaultAsync(p => p.NameOwner == NameOwner);

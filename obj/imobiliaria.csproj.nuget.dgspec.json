@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\imobiliaria.csproj": {}
+    "C:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria_final\\imobiliaria\\imobiliaria.csproj": {}
   },
   "projects": {
-    "C:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\imobiliaria.csproj": {
+    "C:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria_final\\imobiliaria\\imobiliaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\imobiliaria.csproj",
+        "projectUniqueName": "C:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria_final\\imobiliaria\\imobiliaria.csproj",
         "projectName": "imobiliaria",
-        "projectPath": "C:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\imobiliaria.csproj",
-        "packagesPath": "C:\\Users\\96343\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\96343\\Desktop\\projetos\\imobiliaria\\obj\\",
+        "projectPath": "C:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria_final\\imobiliaria\\imobiliaria.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\OneDrive - sgiweb.com.br\\Desktop\\imobiliaria_final\\imobiliaria\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\96343\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

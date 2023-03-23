@@ -1,27 +1,20 @@
-using System.Linq;
 using imobiliaria.Context;
 using imobiliaria.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Swashbuckle.AspNetCore.Annotations;
-
 
 namespace imobiliaria.Controllers
 {
     [ApiController]
-
-    [Route("api/[Controller]")]
-    public class cityController : ControllerBase
+    public class CityController : ControllerBase
     {
-
         public readonly ImobiliariaContext _context;
 
-        public cityController(ImobiliariaContext context)
+        public CityController(ImobiliariaContext context)
         {
             _context = context;
         }
         [HttpPost]
-        [Route("/api/city")]
+        [Route("api/cities")]
         public ActionResult addCity(City city)
         {
             _context.Add(city);

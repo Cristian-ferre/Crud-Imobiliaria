@@ -1,14 +1,10 @@
 using imobiliaria.Context;
-using imobiliaria.DTO;
 using imobiliaria.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
-
 namespace imobiliaria.Controllers
 {
     [ApiController]
-    [Route("Api/[Controller]")]
     public class PropertyController : ControllerBase
 
     {
@@ -22,30 +18,16 @@ namespace imobiliaria.Controllers
 
         //criando propriedades 
         [HttpPost]
-        [Route("api/Propriedades")]
-        public async Task<ActionResult<List<Property>>> CreatePropriedades(CreatePropertyDTO request)
+        [Route("api/Properties")]
+        public  ActionResult CreatePropriedades(Property property)
         {
-            var owner = await _context.Owners.FindAsync(request.OwnerId);
-            if (owner == null) return NotFound();
-            var newProperty = new Property
-            {
-                ImgURL = request.ImgURL,
-                ShortDescription = request.ShortDescription,
-                PropertyValue = request.PropertyValue,
-                NumberBedrooms = request.NumberBedrooms,
-                NumberRestrooms = request.NumberRestrooms,
-                Neighborhood = request.Neighborhood,
-                Street = request.Street,
-                Owner = owner
-            };
-            _context.Properties.Add(newProperty);
-            await _context.SaveChangesAsync();
-            return await GetPropriedades(newProperty.OwnerId);
+            _context.Add(property);
+            _context.SaveChanges();
+            return Ok();
         }
 
-
         [HttpPut]
-        [Route("api/propriedade/{id}")]
+        [Route("api/property/{id}")]
         public IActionResult putProprietariro(int id, [FromBody] Property property)
         {
             var pPropri = _context.Properties.Update(property);
@@ -56,14 +38,14 @@ namespace imobiliaria.Controllers
         }
 
         //aqui eu estou buscando as propriedades por proprietario 
-        [HttpGet("api/Propriedade{OwnerId}")]
+        [HttpGet("api/property/{OwnerId}")]
         public async Task<ActionResult<List<Property>>> GetPropriedades(int OwnerId)
         {
             var Properties = await _context.Properties.Where(x => x.OwnerId == OwnerId).ToListAsync();
             return Properties;
         }
 
-        [HttpGet("api/Propriedade")]
+        [HttpGet("api/properties")]
         public async Task<ActionResult<List<Property>>> GetAll()
         {
             var todos = await _context.Properties.ToListAsync();
@@ -71,7 +53,7 @@ namespace imobiliaria.Controllers
         }
 
         [HttpDelete]
-        [Route("delete")]
+        [Route("api/property/{propertyId}")]
         public async Task<ActionResult> DeletePropriedade(int propertyId)
         {
             var dele = await _context.Properties.FindAsync(propertyId);
